@@ -69,11 +69,7 @@ def draw_band_diagram(ax, Nd, Na, title, n_left=True):
     # Общая длина = 10 условных единиц
     # ОПЗ в центре; делим ОПЗ пропорционально
     W_total = 3.0  # условная ширина ОПЗ на графике
-    if n_left:
-        frac_n = p['xn_over_xp'] / (1.0 + p['xn_over_xp'])
-    else:
-        frac_n = 1.0 / (1.0 + p['xn_over_xp'])
-
+    frac_n = p['xn_over_xp'] / (1.0 + p['xn_over_xp'])
     frac_n = np.clip(frac_n, 0.05, 0.95)
     W_n = W_total * frac_n
     W_p = W_total * (1.0 - frac_n)
